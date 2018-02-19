@@ -94,9 +94,14 @@
 
 (defn resize-and-render [event]
   (let [new-height (.-innerHeight js/window)
-        new-width (.-innerWidth js/window)]
-    (set! (.-height canvas) new-height)
-    (set! (.-width canvas) new-width)
+        new-width (.-innerWidth js/window)
+        new-dim (min new-height new-width)
+        margin (str (/ (- new-width new-dim) 2)
+                    "px")]
+    (set! (.-height canvas) new-dim)
+    (set! (.-width canvas) new-dim)
+    (set! (.. canvas -style -marginLeft) margin)
+    (set! (.. canvas -style -marginRight) margin)
     (render)))
 (set! (.-onresize js/window) resize-and-render)
 (resize-and-render false)
