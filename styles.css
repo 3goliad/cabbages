@@ -1,36 +1,31 @@
 @font-face {
-  font-family: "Lora Regular";
-  src: url("Lora-Regular.woff2") format("woff2");
+    font-family: "Lora Regular";
+    src: url("Lora-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Lora Bold";
-  src: url("Lora-Bold.woff2") format("woff2");
+    font-family: "Lora Bold";
+    src: url("Lora-Bold.woff2") format("woff2");
 }
 
 body {
-  margin: 0;
+    margin: 1vh 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .message {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  height: 15%;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  font-family: "Lora Bold";
-  font-size: 2em;
-  top: 0;
-  position: absolute;
-  color: white;
-  z-index: 1;
+    padding: 4vh;
+    font-family: "Lora Bold";
 }
 
-#illustration {
-  margin: 0;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  position: absolute;
+.image-container {
+    height: 22vh;
+    margin: 1vh auto;
+}
+
+canvas {
+    height: 20vh;
+    width: 20vh;
 }
