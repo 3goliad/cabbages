@@ -1,13 +1,31 @@
 @font-face {
+    font-family: "Lora Regular";
+    src: url("Lora-Regular.woff2") format("woff2");
 }
 
 @font-face {
+    font-family: "Lora Bold";
+    src: url("Lora-Bold.woff2") format("woff2");
 }
 
 body {
+    margin: 1vh 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .message {
+    padding: 4vh;
+    font-family: "Lora Bold";
 }
 
+.image-container {
+    height: 22vh;
+    margin: 1vh auto;
+}
+
+canvas {
+    height: 20vh;
+    width: 20vh;
 }

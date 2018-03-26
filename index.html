@@ -2,12 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>printers</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="message">
+        The Ultimaker 2 Extended printer has a build volume of 22.3cm x 22.3cm x 30.5cm and prints 0.4mm diameter filament at a resolution of up to 20 microns.
     </div>
+    <div class="message">
+        Displayed below is an image which represents the number of unique forms the Ultimaker 2 Extended can produce. Each pixel in the image can be interpreted as four base 256 numbers, in RGBA order. Also displayed is an image representing a single unique form as an address within the space described by the first image. Given time, this page will display every form that the Ultimaker 2 Extended will ever be able to create.
+    </div>
+    <div class="image-container">
+        <canvas id="space"></canvas>
+    </div>
+    <div class="image-container">
+        <canvas id="point"></canvas>
+    </div>
+    <script src="printers.js"></script>
   </body>
 </html>
