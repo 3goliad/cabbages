@@ -3,7 +3,16 @@
 
 (enable-console-print!)
 
-(def canvas 
+(defn bezier [t]
+  (let [t2 (* t t)
+        mt (- 1 t)
+        mt2 (* mt mt)]
+    (+ (* mt2 mt)
+       (* 3 t mt2)
+       (* 3 t2 mt)
+       (* t2 t))))
+
+(def canvas
   (js/document.getElementById "illustration"))
 (def ctx
   (.getContext canvas "2d"))
@@ -55,22 +64,11 @@
       x1 y1)
     (.stroke ctx)))
 
-(defn get-space []
-  nil)
-
-(defn split-space [_]
-  nil)
-
-(defn draw-veins-space [space]
-  nil)
+(def pi (.-PI js/Math))
 
 (defn draw-veins []
-  (let [space get-space
-        [left right] (split-space space)]
-    (draw-veins-space left)
-    (draw-veins-space right)))
-
-(def pi (.-PI js/Math))
+  (let [distance-left 0.25]
+    (draw-line [0 (+ distance-left -0.75)] 1 (/ pi 3))))
 
 (defn guidelines []
   (let [angle (/ pi 3)]
@@ -81,7 +79,7 @@
   (draw-margin)
   (draw-midrib)
   (guidelines)
-  #_ (draw-veins))
+  (draw-veins))
 
 
 (defn reset []
